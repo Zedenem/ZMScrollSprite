@@ -1,5 +1,5 @@
 //
-//  ZMMyScene.h
+//  ZMScrollScene.h
 //  ZMScrollSpriteProject
 //
 
@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface ZMMyScene : SKScene
+@interface ZMScrollScene : SKScene
 
 @end
