@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F23CA64C18D6F856009C5B13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23CA64B18D6F856009C5B13 /* Foundation.framework */; };
+		F23CA64E18D6F856009C5B13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23CA64D18D6F856009C5B13 /* CoreGraphics.framework */; };
+		F23CA65018D6F856009C5B13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23CA64F18D6F856009C5B13 /* UIKit.framework */; };
+		F23CA65218D6F856009C5B13 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23CA65118D6F856009C5B13 /* SpriteKit.framework */; };
+		F23CA65818D6F856009C5B13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F23CA65618D6F856009C5B13 /* InfoPlist.strings */; };
+		F23CA65A18D6F856009C5B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F23CA65918D6F856009C5B13 /* main.m */; };
+		F23CA65E18D6F856009C5B13 /* ZMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F23CA65D18D6F856009C5B13 /* ZMAppDelegate.m */; };
+		F23CA66118D6F856009C5B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CA65F18D6F856009C5B13 /* Main.storyboard */; };
+		F23CA66418D6F856009C5B13 /* ZMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F23CA66318D6F856009C5B13 /* ZMViewController.m */; };
+		F23CA66718D6F856009C5B13 /* ZMScrollScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F23CA66618D6F856009C5B13 /* ZMScrollScene.m */; };
+		F23CA66B18D6F856009C5B13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CA66A18D6F856009C5B13 /* Images.xcassets */; };
+		F23CA68E18D70738009C5B13 /* ZMScrollSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F23CA68D18D70738009C5B13 /* ZMScrollSprite.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F23CA64818D6F856009C5B13 /* ZMScrollSpriteProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMScrollSpriteProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F23CA64B18D6F856009C5B13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F23CA64D18D6F856009C5B13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F23CA64F18D6F856009C5B13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F23CA65118D6F856009C5B13 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		F23CA65518D6F856009C5B13 /* ZMScrollSpriteProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZMScrollSpriteProject-Info.plist"; sourceTree = "<group>"; };
+		F23CA65718D6F856009C5B13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F23CA65918D6F856009C5B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F23CA65B18D6F856009C5B13 /* ZMScrollSpriteProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZMScrollSpriteProject-Prefix.pch"; sourceTree = "<group>"; };
+		F23CA65C18D6F856009C5B13 /* ZMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAppDelegate.h; sourceTree = "<group>"; };
+		F23CA65D18D6F856009C5B13 /* ZMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMAppDelegate.m; sourceTree = "<group>"; };
+		F23CA66018D6F856009C5B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F23CA66218D6F856009C5B13 /* ZMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMViewController.h; sourceTree = "<group>"; };
+		F23CA66318D6F856009C5B13 /* ZMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMViewController.m; sourceTree = "<group>"; };
+		F23CA66518D6F856009C5B13 /* ZMScrollScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMScrollScene.h; sourceTree = "<group>"; };
+		F23CA66618D6F856009C5B13 /* ZMScrollScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMScrollScene.m; sourceTree = "<group>"; };
+		F23CA66A18D6F856009C5B13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F23CA67118D6F856009C5B13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F23CA68C18D70738009C5B13 /* ZMScrollSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMScrollSprite.h; sourceTree = "<group>"; };
+		F23CA68D18D70738009C5B13 /* ZMScrollSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMScrollSprite.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F23CA64518D6F856009C5B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23CA64E18D6F856009C5B13 /* CoreGraphics.framework in Frameworks */,
+				F23CA65018D6F856009C5B13 /* UIKit.framework in Frameworks */,
+				F23CA65218D6F856009C5B13 /* SpriteKit.framework in Frameworks */,
+				F23CA64C18D6F856009C5B13 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F23CA63F18D6F856009C5B13 = {
+			isa = PBXGroup;
+			children = (
+				F23CA68B18D70738009C5B13 /* ZMScrollSprite */,
+				F23CA65318D6F856009C5B13 /* test_project */,
+				F23CA64A18D6F856009C5B13 /* Frameworks */,
+				F23CA64918D6F856009C5B13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F23CA64918D6F856009C5B13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F23CA64818D6F856009C5B13 /* ZMScrollSpriteProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F23CA64A18D6F856009C5B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F23CA64B18D6F856009C5B13 /* Foundation.framework */,
+				F23CA64D18D6F856009C5B13 /* CoreGraphics.framework */,
+				F23CA64F18D6F856009C5B13 /* UIKit.framework */,
+				F23CA65118D6F856009C5B13 /* SpriteKit.framework */,
+				F23CA67118D6F856009C5B13 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F23CA65318D6F856009C5B13 /* test_project */ = {
+			isa = PBXGroup;
+			children = (
+				F23CA65C18D6F856009C5B13 /* ZMAppDelegate.h */,
+				F23CA65D18D6F856009C5B13 /* ZMAppDelegate.m */,
+				F23CA65F18D6F856009C5B13 /* Main.storyboard */,
+				F23CA66218D6F856009C5B13 /* ZMViewController.h */,
+				F23CA66318D6F856009C5B13 /* ZMViewController.m */,
+				F23CA66518D6F856009C5B13 /* ZMScrollScene.h */,
+				F23CA66618D6F856009C5B13 /* ZMScrollScene.m */,
+				F23CA66A18D6F856009C5B13 /* Images.xcassets */,
+				F23CA65418D6F856009C5B13 /* Supporting Files */,
+			);
+			name = test_project;
+			path = ZMScrollSpriteProject;
+			sourceTree = "<group>";
+		};
+		F23CA65418D6F856009C5B13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F23CA65518D6F856009C5B13 /* ZMScrollSpriteProject-Info.plist */,
+				F23CA65618D6F856009C5B13 /* InfoPlist.strings */,
+				F23CA65918D6F856009C5B13 /* main.m */,
+				F23CA65B18D6F856009C5B13 /* ZMScrollSpriteProject-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F23CA68B18D70738009C5B13 /* ZMScrollSprite */ = {
+			isa = PBXGroup;
+			children = (
+				F23CA68C18D70738009C5B13 /* ZMScrollSprite.h */,
+				F23CA68D18D70738009C5B13 /* ZMScrollSprite.m */,
+			);
+			name = ZMScrollSprite;
+			path = ../ZMScrollSprite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F23CA64718D6F856009C5B13 /* ZMScrollSpriteProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F23CA68118D6F856009C5B13 /* Build configuration list for PBXNativeTarget "ZMScrollSpriteProject" */;
+			buildPhases = (
+				F23CA64418D6F856009C5B13 /* Sources */,
+				F23CA64518D6F856009C5B13 /* Frameworks */,
+				F23CA64618D6F856009C5B13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZMScrollSpriteProject;
+			productName = ZMScrollSpriteProject;
+			productReference = F23CA64818D6F856009C5B13 /* ZMScrollSpriteProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F23CA64018D6F856009C5B13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Zedenem;
+			};
+			buildConfigurationList = F23CA64318D6F856009C5B13 /* Build configuration list for PBXProject "ZMScrollSpriteProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F23CA63F18D6F856009C5B13;
+			productRefGroup = F23CA64918D6F856009C5B13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F23CA64718D6F856009C5B13 /* ZMScrollSpriteProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F23CA64618D6F856009C5B13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23CA65818D6F856009C5B13 /* InfoPlist.strings in Resources */,
+				F23CA66B18D6F856009C5B13 /* Images.xcassets in Resources */,
+				F23CA66118D6F856009C5B13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F23CA64418D6F856009C5B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23CA65A18D6F856009C5B13 /* main.m in Sources */,
+				F23CA68E18D70738009C5B13 /* ZMScrollSprite.m in Sources */,
+				F23CA66718D6F856009C5B13 /* ZMScrollScene.m in Sources */,
+				F23CA65E18D6F856009C5B13 /* ZMAppDelegate.m in Sources */,
+				F23CA66418D6F856009C5B13 /* ZMViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F23CA65618D6F856009C5B13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F23CA65718D6F856009C5B13 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F23CA65F18D6F856009C5B13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F23CA66018D6F856009C5B13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F23CA67F18D6F856009C5B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		F23CA68018D6F856009C5B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F23CA68218D6F856009C5B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZMScrollSpriteProject/ZMScrollSpriteProject-Prefix.pch";
+				INFOPLIST_FILE = "ZMScrollSpriteProject/ZMScrollSpriteProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F23CA68318D6F856009C5B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZMScrollSpriteProject/ZMScrollSpriteProject-Prefix.pch";
+				INFOPLIST_FILE = "ZMScrollSpriteProject/ZMScrollSpriteProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F23CA64318D6F856009C5B13 /* Build configuration list for PBXProject "ZMScrollSpriteProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F23CA67F18D6F856009C5B13 /* Debug */,
+				F23CA68018D6F856009C5B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F23CA68118D6F856009C5B13 /* Build configuration list for PBXNativeTarget "ZMScrollSpriteProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F23CA68218D6F856009C5B13 /* Debug */,
+				F23CA68318D6F856009C5B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F23CA64018D6F856009C5B13 /* Project object */;
+}
