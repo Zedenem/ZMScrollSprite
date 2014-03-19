@@ -1,14 +1,21 @@
-#Installation
+##Installation
 
+### With CocoaPods
+
+Just add `pod 'ZMScrollSprite', '~> 1.0.0'` to your `Podfile` and run
+
+```
+$> pod install
+```
+
+### Without CocoaPods
 Just drag'n'drop `SKScrollSprite.h` and `SKScrollSprite.m` into your XCode project.
 
-*CocoaPods pod coming soon...*
-
-#Usage
+##Usage
 
 `SKScrollSprite` is built to be super easy-to-use.
 
-##Step 1
+###Step 1
 
 Just instantiate an `SKScrollSprite` object using the specific `init` method:
 
@@ -16,7 +23,7 @@ Just instantiate an `SKScrollSprite` object using the specific `init` method:
 - (instancetype)initWithSize:(CGSize)size contentSize:(CGSize)contentSize;
 ```
 
-##Step 2 (Optional)
+###Step 2 (Optional)
 
 If you added your `SKScrollSprite` instance in the nodes' hierarchy before your `SKScene` was added to its `SKView`, just override `- (void)didMoveToView:(SKView *)view` and add this line:
 
@@ -26,8 +33,8 @@ If you added your `SKScrollSprite` instance in the nodes' hierarchy before your 
 
 That's it! You are good to go!
 
-#License
-##This project is released under the MIT License
+##License
+###This project is released under the MIT License
 
 Copyright (c) 2012 Zedenem
 
