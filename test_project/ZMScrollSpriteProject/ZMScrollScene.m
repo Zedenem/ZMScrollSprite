@@ -10,7 +10,7 @@
 
 #import "ZMScrollSprite.h"
 
-@interface ZMScrollScene ()
+@interface ZMScrollScene () <ZMScrollSpriteDelegate>
 
 @property(strong, nonatomic) ZMScrollSprite *scrollSprite;
 
@@ -20,25 +20,37 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor grayColor];
         
-        self.scrollSprite = [ZMScrollSprite scrollSpriteWithSize:size contentSize:CGSizeMake(size.width*3, size.height*2)];
+        self.scrollSprite = [ZMScrollSprite scrollSpriteWithSize:size contentSize:CGSizeMake(size.width, size.height*2)];
+        self.scrollSprite.position = CGPointMake(size.width/2, size.height/2);
         [self addChild:self.scrollSprite];
         
         SKSpriteNode *blueSprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(300, 100)];
         blueSprite.position = CGPointMake(200, 200);
         [self addChild:blueSprite];
         
-        SKSpriteNode *greenSprite = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(300, 100)];
-        greenSprite.position = CGPointMake(500, 500);
+        SKSpriteNode *greenSprite = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(100, 100)];
+        greenSprite.position = CGPointMake(300, 500);
         [self.scrollSprite addChild:greenSprite];
+        
+        SKSpriteNode *otherGreenSprite = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(300, 500)];
+        otherGreenSprite.position = CGPointMake(0, 0);
+        [self.scrollSprite addChild:otherGreenSprite];
     }
     return self;
 }
-
 - (void)didMoveToView:(SKView *)view {
     [super didMoveToView:view];
-    [self.scrollSprite sceneDidMoveToView:view];
+    [self runAction:[SKAction sequence:@[[SKAction waitForDuration:1.0],
+                                         [SKAction runBlock:^{
+        [self.scrollSprite setContentOffset:self.scrollSprite.maximumContentOffset animated:YES];
+    }]]]];
+}
+
+#pragma mark ZMScrollSpriteDelegate
+- (void)scrollSpriteDidScroll:(ZMScrollSprite *)scrollSprite {
+    
 }
 
 @end

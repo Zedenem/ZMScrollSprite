@@ -1,6 +1,5 @@
 //
 //  ZMScrollSprite.m
-//  ZMScrollSpriteProject
 //
 //  Created by Zouhair Mahieddine on 3/17/14.
 //  Copyright (c) 2014 Zedenem. All rights reserved.
@@ -10,8 +9,11 @@
 
 @interface ZMScrollSprite () <UIScrollViewDelegate>
 
-@property(strong, nonatomic) UIScrollView *scrollView;
 @property(strong, nonatomic) SKSpriteNode *contentSprite;
+
+- (CGPoint)validContentOffsetFromContentOffset:(CGPoint)contentOffset;
+@property(nonatomic, readonly) CGPoint contentSpriteDefaultPosition;
+@property(nonatomic, readonly) CGPoint contentSpriteCurrentPosition;
 
 @end
 
@@ -19,19 +21,13 @@
 
 #pragma mark Initialization
 - (instancetype)initWithSize:(CGSize)size contentSize:(CGSize)contentSize {
-    self = [super initWithColor:nil size:size];
+    self = [super initWithColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:0.5] size:size];
     if (self) {
-        _contentSprite = [SKSpriteNode spriteNodeWithColor:nil size:contentSize];
-        _contentSprite.anchorPoint = CGPointMake(0, 0.5);
+        _contentSprite = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.8] size:contentSize];
+        _contentSize = contentSize;
+        _contentSprite.position = self.contentSpriteDefaultPosition;
         [self addChild:_contentSprite];
-        
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _scrollView.contentSize = contentSize;
-        _scrollView.delegate = self;
-        if (self.scene.view) {
-            [self.scene.view addSubview:_scrollView];
-        }
+        self.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -49,36 +45,79 @@
     }
 }
 
-#pragma mark UIScrollView Helpers
-- (void)sceneDidMoveToView:(UIView *)view {
-    if (self.scrollView.superview) {
-        [self.scrollView removeFromSuperview];
-    }
-    [self.scene.view addSubview:self.scrollView];
-}
-
-#pragma mark Scrolling
-@dynamic contentSize;
-- (CGSize)contentSize {
-    return self.scrollView.contentSize;
-}
+#pragma mark Managing the Display of Content
 - (void)setContentSize:(CGSize)contentSize {
-    [self.scrollView setContentSize:contentSize];
-}
-@dynamic contentOffset;
-- (CGPoint)contentOffset {
-    return self.scrollView.contentOffset;
+    if (!CGSizeEqualToSize(_contentSize, contentSize)) {
+        _contentSize = CGSizeMake(MAX(self.size.width, contentSize.width),
+                                  MAX(self.size.height, contentSize.height));
+    }
 }
 - (void)setContentOffset:(CGPoint)contentOffset {
-    [self.scrollView setContentOffset:contentOffset];
+    if (!CGPointEqualToPoint(_contentOffset, contentOffset)) {
+        [self setContentOffset:contentOffset animated:NO];
+    }
 }
 - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated {
-    [self.scrollView setContentOffset:contentOffset animated:YES];
+    if (!CGPointEqualToPoint(_contentOffset, contentOffset)) {
+        _contentOffset = [self validContentOffsetFromContentOffset:contentOffset];
+        if (animated) {
+            [self.contentSprite runAction:[SKAction moveTo:self.contentSpriteCurrentPosition duration:0.5f]];
+        }
+        else {
+            self.contentSprite.position = [self contentSpriteCurrentPosition];
+        }
+    }
 }
 
-#pragma mark UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    self.contentSprite.position = CGPointMake(- scrollView.contentOffset.x, scrollView.contentOffset.y);
+- (CGPoint)validContentOffsetFromContentOffset:(CGPoint)contentOffset {
+    return CGPointMake(MIN(MAX(self.minimumContentOffset.x, contentOffset.x), self.maximumContentOffset.x),
+                       MIN(MAX(self.minimumContentOffset.y, contentOffset.y), self.maximumContentOffset.y));
+}
+
+- (CGPoint)minimumContentOffset {
+    return CGPointMake(0, 0);
+}
+- (CGPoint)maximumContentOffset {
+    return CGPointMake(self.contentSize.width - self.size.width, self.contentSize.height - self.size.height);
+}
+
+- (CGPoint)contentSpriteCurrentPosition {
+    return CGPointMake(self.contentSpriteDefaultPosition.x + _contentOffset.x,
+                       self.contentSpriteDefaultPosition.y + _contentOffset.y);
+}
+- (CGPoint)contentSpriteDefaultPosition {
+    return CGPointMake(- (self.contentSize.width - self.size.width)/2,
+                       - (self.contentSize.height - self.size.height)/2);
+}
+
+#pragma mark Managing Scrolling
+- (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated {
+    
+}
+
+#pragma mark Responding to Touch Events
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    CGPoint previousLocation = [touch previousLocationInNode:self];
+    
+    CGPoint contentOffset = self.contentOffset;
+    CGFloat deltaX = location.x - previousLocation.x;
+    CGFloat deltaY = location.y - previousLocation.y;
+    contentOffset.x += deltaX;
+    contentOffset.y += deltaY;
+    self.contentOffset = contentOffset;
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+}
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesCancelled:touches withEvent:event];
 }
 
 @end

@@ -9,30 +9,36 @@ $> pod install
 ```
 
 ### Without CocoaPods
-Just drag'n'drop `SKScrollSprite.h` and `SKScrollSprite.m` into your XCode project.
+Just drag'n'drop `ZMScrollSprite.h` and `ZMScrollSprite.m` into your XCode project.
 
 ##Usage
 
-`SKScrollSprite` is built to be super easy-to-use.
+`ZMScrollSprite` is built to be super easy-to-use.
 
 ###Step 1
 
-Just instantiate an `SKScrollSprite` object using the specific `init` method:
+Just instantiate a `ZMScrollSprite` object using the specific `init` method:
 
 ```
 - (instancetype)initWithSize:(CGSize)size contentSize:(CGSize)contentSize;
 ```
 
-###Step 2 (Optional)
+###No Step 2 Anymore!
 
-If you added your `SKScrollSprite` instance in the nodes' hierarchy before your `SKScene` was added to its `SKView`, just override `- (void)didMoveToView:(SKView *)view` and add this line:
+`ZMScrollSprite` is no longer based on the scrolling behavior of a hidden `UIScrollView` object.
 
-```
-[myScrollSprite sceneDidMoveToView:view];
-```
+This gives it more flexibilty but also removes some of the cool functionalities inherited from the `UIScrollView` scrolling behavior (bouncing, paging, deceleration, etc.).
 
-That's it! You are good to go!
+All these refinements are already on `ZMScrollSprite`'s roadmap and will be added in future versions.
 
+For now, you have two choices:
+
+* Stick to v1.0.0 that uses the `UIScrollView`. Big downside: every area covered by the hidden `UIScrollView` won't be accessible to interact with the `SKScene`
+* Use v1.0.1 which works great in a full-screen `SpriteKit` only environment but is less refined than the v1.0.0
+
+Hope this will help you as much as it helps me!
+
+ 
 ##License
 ###This project is released under the MIT License
 
