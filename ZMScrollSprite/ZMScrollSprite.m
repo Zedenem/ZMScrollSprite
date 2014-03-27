@@ -21,9 +21,9 @@
 
 #pragma mark Initialization
 - (instancetype)initWithSize:(CGSize)size contentSize:(CGSize)contentSize {
-    self = [super initWithColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:0.5] size:size];
+    self = [super initWithColor:nil size:size];
     if (self) {
-        _contentSprite = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.8] size:contentSize];
+        _contentSprite = [SKSpriteNode spriteNodeWithColor:nil size:contentSize];
         _contentSize = contentSize;
         _contentSprite.position = self.contentSpriteDefaultPosition;
         [self addChild:_contentSprite];

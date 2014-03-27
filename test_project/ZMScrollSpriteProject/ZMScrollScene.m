@@ -32,10 +32,12 @@
         
         SKSpriteNode *greenSprite = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(100, 100)];
         greenSprite.position = CGPointMake(300, 500);
+        greenSprite.anchorPoint = CGPointMake(0, 1);
         [self.scrollSprite addChild:greenSprite];
         
         SKSpriteNode *otherGreenSprite = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(300, 500)];
-        otherGreenSprite.position = CGPointMake(0, 0);
+        otherGreenSprite.position = CGPointMake(10 - (self.scrollSprite.contentSize.width - otherGreenSprite.size.width)/2,
+                                                -10 + (self.scrollSprite.contentSize.height - otherGreenSprite.size.height)/2);
         [self.scrollSprite addChild:otherGreenSprite];
     }
     return self;
